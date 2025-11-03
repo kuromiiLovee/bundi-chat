@@ -1,0 +1,18 @@
+[project]
+name = "fichat"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+requires-python = ">=3.12"
+dependencies = [
+    "aerich[toml]>=0.9.2",
+    "aiosqlite>=0.21.0",
+    "fastapi>=0.120.3",
+    "passlib>=1.7.4",
+    "pydantic>=2.12.3",
+    "pydantic-settings>=2.11.0",
+    "python-jose>=3.5.0",
+    "tortoise-orm[asyncpg]>=0.25.1",
+    "uvicorn>=0.38.0",
+    "websockets>=15.0.1",
+]
