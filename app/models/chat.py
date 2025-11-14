@@ -1,4 +1,5 @@
 from tortoise import fields
+from tortoise.fields import OnDelete
 
 from .base import BaseModel, TimestampMixin
 
@@ -6,13 +7,13 @@ from .base import BaseModel, TimestampMixin
 class Chat(TimestampMixin, BaseModel):
     sender = fields.ForeignKeyField(
         "models.User",
-        on_delete=fields.CASCADE,
+        on_delete=OnDelete.CASCADE,
         related_name="sender",
         null=False,
     )
     room = fields.ForeignKeyField(
         "models.Room",
-        on_delete=fields.CASCADE,
+        on_delete=OnDelete.CASCADE,
         related_name="room_chats",
         null=False,
     )

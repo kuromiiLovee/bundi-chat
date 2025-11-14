@@ -12,7 +12,7 @@ class Room(TimestampMixin, BaseModel):
     link = fields.CharField(max_length=255, null=True, index=True)
     host = fields.ForeignKeyField(
         "models.User",
-        on_delete=fields.CASCADE,
+        on_delete=OnDelete.CASCADE,
         related_name="room_admin",
         null=False,
     )
