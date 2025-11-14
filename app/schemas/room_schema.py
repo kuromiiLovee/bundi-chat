@@ -6,7 +6,7 @@ from pydantic import BaseModel
 from .user_schema import User
 
 
-class Room(BaseModel):
+class ChatRoom(BaseModel):
     """
     Base class for a room schema.
     """
@@ -14,7 +14,7 @@ class Room(BaseModel):
     pass
 
 
-class CreateRoom(Room):
+class CreateRoom(ChatRoom):
     """
     Schema used to create a chat room.
     """
