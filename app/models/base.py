@@ -14,7 +14,7 @@ class BaseModel(models.Model):
         Override `save()` to use ULID to generate ID on save.
         """
         if not self.id:
-            self.id = str(ulid.new())[:32]
+            self.id = str(ulid.new())[:15]
         await super().save(*args, **kwargs)
 
     class Meta:
