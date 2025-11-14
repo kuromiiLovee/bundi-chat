@@ -1,0 +1,114 @@
+# ----------------------------------------------
+# Docker Compose configuration for the Fichat app
+# It defines the following services:
+#   1. web  → FastAPI application
+#   2. db   → PostgreSQL database
+#   3. pgAdmin → pgAdmin  
+# ----------------------------------------------
+
+services:
+  web:
+    build: .  # Build the Docker image using the Dockerfile in the current directory
+    container_name: fichat_app  # Name of the running container for easy reference
+
+    # The command that starts your app once the container runs
+    # Using `uv run` since you're managing dependencies with uv
+    # Use `>` to split long commands across multiple lines for readability
+    command: >
+      uv run uvicorn app:app 
+      --host 0.0.0.0 
+      --port 8000 
+      --reload 
+    # --use-colors 
+    # --log-level debug
+
+    # Mount the local project directory (.) into the container's /app folder
+    # This allows live-reloading and seeing code changes instantly (dev mode)
+    volumes:
+      - .:/app
+      - ~/.config/nvim:/root/.config/nvim
+
+    environment:
+      PATH: "/root/.local/bin:${PATH}"
+    # Map port 8000 on your machine to port 8000 inside the container
+    # Access FastAPI Swagger docs at http://localhost:8000/api/v1/docs
+    ports:
+      - "8000:8000"
+
+    # Load environment variables from your `.env` file
+    env_file:
+      - .env
+
+    # Ensure the app only starts after the database is ready
+    depends_on:
+      - db
+
+    networks:
+      - fichat_network
+
+  # --------------------------------------------------
+  # PostgreSQL Database Service
+  # --------------------------------------------------
+  db:
+    image: postgres:16  # Use the official PostgreSQL 16 image from Docker Hub
+    container_name: fichat_db  # Container name for easy reference
+    restart: always  # Automatically restart if the container crashes
+
+    # Environment variables used by the Postgres image to initialize the DB
+    environment:
+      POSTGRES_USER: ${DB_USER}      # Username for the database
+      POSTGRES_PASSWORD: ${DB_PASSWORD}  # Password for the user
+      POSTGRES_DB: fichat_db          # Name of the default database to create
+
+    # Map PostgreSQL's internal port (5432) to your machine
+    # Optional if you only access Postgres from inside Docker
+    ports:
+      - "5432:5432"
+
+    # Define a named volume to persist database data
+    # so your data isn't lost when the container stops
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+
+    networks:
+      - fichat_network
+
+  # --------------------------------------------------
+  # PgAdmin Service
+  # --------------------------------------------------
+
+  pgadmin:
+    image: dpage/pgadmin4
+    container_name: pgadmin
+    restart: always
+    environment:
+      PGADMIN_DEFAULT_EMAIL: ${PGADMIN_EMAIL}
+      PGADMIN_DEFAULT_PASSWORD: ${PGADMIN_PASSWORD}
+      GUNICORN_ACCESS_LOGFILE: /dev/null   # disables access logs
+    
+    ports:
+      - "5050:80"
+    depends_on:
+      - db
+    volumes:
+      - pgadmin_data:/var/lib/pgadmin
+    networks:
+      - fichat_network
+
+
+# --------------------------------------------------
+# Define named volumes for persistent storage
+# --------------------------------------------------
+volumes:
+  postgres_data:  # Stores PostgreSQL data files outside the container
+  pgadmin_data: # Stores PgAdmin data files outside the container
+
+
+# --------------------------------------------------
+# Define a custom network for inter-container communication
+# --------------------------------------------------
+networks:
+  fichat_network:
+    driver: bridge
+
+

@@ -53,9 +53,11 @@ class RoomMembers(BaseModel):
     This schema represents response data for all members in a chat room.
     """
 
-    member: str
-    room: str
+    members: List[RoomMember]
+    room: RoomResponse
 
+    class Config:
+        from_attributes = True
 
 
 class JoinChatRoom(BaseModel):
