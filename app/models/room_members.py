@@ -21,6 +21,11 @@ class RoomMember(BaseModel, TimestampMixin):
         null=False,
         related_name="room_members",
     )
+    failed_attempts = fields.IntField(default=0)  # Track failed login attempts
+    is_blocked = fields.BooleanField(
+        default=False
+    )  # Indicates if the member is blocked
+    is_banned = fields.BooleanField(default=False)  # Indicates if the member is banned
 
     class Meta:
         ordering = ["member"]
