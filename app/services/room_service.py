@@ -97,7 +97,6 @@ class RoomService:
             room_member.failed_attempts = 0
             await room_member.save()
 
-        # create record for members who have joined the chat room.
         # add user if they haven't joined the chat room.
         member_exists = await self.user_has_joined_room(room, user)
         if not member_exists:
