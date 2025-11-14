@@ -3,7 +3,13 @@ from typing import Dict, List
 from fastapi import APIRouter, Depends
 
 from app.core.dependencies import get_current_user
-from app.schemas import RoomResponse, User
+from app.schemas import (
+    JoinChatRoom,
+    JoinChatRoomResponse,
+    RoomMembers,
+    RoomResponse,
+    User,
+)
 from app.services import RoomService
 
 router = APIRouter()
@@ -34,7 +40,7 @@ async def get_my_rooms(
     return await service.get_rooms_by_admin(user=user)
 
 
-@router.get("/{room_link}/members", response_model=RoomResponse)
+@router.get("/{room_link}/members", response_model=RoomMembers)
 async def get_room_members(
     room_link: str,
     service: RoomService = Depends(get_room_service),
@@ -57,7 +63,7 @@ async def create_room(
     return await service.create_room(user=user)
 
 
-@router.post("/{room_link}/join-room", response_model=RoomResponse)
+@router.post("/{room_link}/join-room", response_model=JoinChatRoomResponse)
 async def join_chat_room(
     room_link: str,
     service: RoomService = Depends(get_room_service),
