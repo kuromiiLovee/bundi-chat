@@ -28,4 +28,4 @@ class RoomMember(BaseModel, TimestampMixin):
     is_banned = fields.BooleanField(default=False)  # Indicates if the member is banned
 
     class Meta:
-        ordering = ["member"]
+        ordering = ["member_id", "room_id"]
