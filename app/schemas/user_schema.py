@@ -23,6 +23,9 @@ class User(BaseUser):
     id: str
     password: str | None = Field(default=None, exclude=True)  # hide user's password
 
+    class Config:
+        from_attributes = True
+
 
 class CreateUser(BaseUser):
     """This is a schema to create a user account."""
