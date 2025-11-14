@@ -65,6 +65,7 @@ async def create_room(
 
 @router.post("/{room_link}/join-room", response_model=JoinChatRoomResponse)
 async def join_chat_room(
+    data: JoinChatRoom,
     room_link: str,
     service: RoomService = Depends(get_room_service),
     user: User = Depends(get_current_user),
@@ -72,7 +73,11 @@ async def join_chat_room(
     """
     This endpoint allows users to join a chat room.
     """
-    return await service.join_room(room_link=room_link, user=user)
+    return await service.join_room(
+        room_link=room_link,
+        user=user,
+        entered_password=data,
+    )
 
 
 @router.delete("/{room_link}/leave-room", response_model=Dict[str, str])
