@@ -140,6 +140,18 @@ class PasswordsDontMatchException(HTTPException):
         )
 
 
+class InvalidPasswordException(HTTPException):
+    """
+    Exception is raised if the user provides an invalid password.
+    """
+
+    def __init__(self):
+        super().__init__(
+            status_code=status.HTTP_401_UNAUTHORIZED,
+            detail="Invalid password provided!",
+        )
+
+
 class RoomDoesNotExistException(HTTPException):
     """
     This exception is raised if the room does not exist.
@@ -152,15 +164,42 @@ class RoomDoesNotExistException(HTTPException):
         )
 
 
-class UserBannedFromRoomException(HTTPException):
+class UserIsBlockedFromJoiningRoomException(HTTPException):
     """
-    This exception is raised if a user is banned from the room.
+    This exception is raised if a user is blocked from joining a
+    chat room due to failed login attempts.
     """
 
     def __init__(self):
         super().__init__(
             status_code=status.HTTP_403_FORBIDDEN,
-            detail="You can't join this room!",
+            detail="Room access blocked due to multiple failed login attempts!",
+        )
+
+
+class UserBannedFromRoomException(HTTPException):
+    """
+    This exception is raised if a user is banned from joining a chat room.
+    """
+
+    def __init__(self):
+        super().__init__(
+            status_code=status.HTTP_403_FORBIDDEN,
+            detail="You are banned and can't rejoin this room!",
+        )
+
+
+class JoinChatRoomFailedException(HTTPException):
+    """
+    This exception is raised when a user's attempts to join a room chat
+    exceeds their failed attempts.
+    """
+
+    def __init__(self, failed_attempts: int):
+        self.failed_attempts = failed_attempts
+        super().__init__(
+            status_code=status.HTTP_403_FORBIDDEN,
+            detail=f"Incorrect password! You have {self.failed_attempts} attempts left.",
         )
 
 
