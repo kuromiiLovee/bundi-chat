@@ -67,5 +67,5 @@ class Room(TimestampMixin, BaseModel):
         await super().save(*args, **kwargs)
 
     class Meta:
-        ordering = ["host", "link"]
-        unique_together = ["host", "link"]
+        ordering = ["host_id", "link"]
+        unique_together = ["host_id", "link"]
