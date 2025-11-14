@@ -92,7 +92,7 @@ async def leave_chat_room(
     return await service.leave_room(room_link=room_link, user=user)
 
 
-@router.delete("/{room_link}/delete-room", response_model=Dict[str, str], status=204)
+@router.delete("/{room_link}/delete-room", response_model=Dict[str, str])
 async def delete_chat_room(
     room_link: str,
     service: RoomService = Depends(get_room_service),
