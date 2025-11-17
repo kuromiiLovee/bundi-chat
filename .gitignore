@@ -8,3 +8,21 @@ wheels/
 
 # Virtual environments
 .venv
+
+# environment variables
+*.env
+.venv.env
+
+# IDE files
+.vscode/
+.idea/
+
+# Jupyter Notebook checkpoints
+.ipynb_checkpoints
+
+# macOS files
+.DS_Store
+
+# Logs
+*.log
+logs/
