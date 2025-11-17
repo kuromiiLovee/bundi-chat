@@ -1,0 +1,46 @@
+# --- Generic ---
+.git
+.gitignore
+.env
+*.log
+
+# --- Python / FastAPI ---
+.venv/
+env/
+venv/
+dist/
+build/
+*.pyc
+*__pycache__/
+
+# --- Tortoise ORM ---
+*.sqlite3
+*.db
+
+# --- OS / Editor ---
+.DS_Store
+Thumbs.db
+*.swp
+*.swo
+.idea/
+.vscode/
+.vim/
+*.bak
+
+# --- Docker / Compose ---
+docker-compose.yml
+Dockerfile
+.dockerignore
+
+# --- Test / Docs ---
+tests/
+docs/
+coverage/
+htmlcov/
+pytest_cache/
+
+# --- Other ---
+*.pem
+*.key
+*.crt
+secrets/
